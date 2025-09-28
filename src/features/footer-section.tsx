@@ -92,7 +92,7 @@ export default function Footer() {
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
           >
-            "MABA Angkatan 21 Pamit Undur Diri"
+            &quot;MABA Angkatan 21 Pamit Undur Diri&quot;
             <footer className="mt-4 text-base text-white/70 font-normal not-italic">
               &mdash; Information System, Muhammadiyah University of Riau, 2021
             </footer>
