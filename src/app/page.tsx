@@ -36,7 +36,13 @@ export default function Home() {
   }, []);
   return (
     <main className="min-h-screen w-full">
-      <Suspense>
+      <Suspense
+        fallback={
+          <div
+            style={{ minHeight: "100vh", background: "#000", width: "100%" }}
+          />
+        }
+      >
         <Hero />
         <SectionInView>
           <Members />
