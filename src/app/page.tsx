@@ -35,10 +35,10 @@ export default function Home() {
     };
   }, []);
   return (
-    <main className="bg-black min-h-screen w-full">
+    <main className="min-h-screen w-full">
       <Suspense
         fallback={
-          <div className="flex flex-col items-center justify-center min-h-screen bg-black animate-fade-in">
+          <div className="bg-black flex flex-col items-center justify-center min-h-screen bg-black animate-fade-in">
             <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mb-6"></div>
             <span className="text-white text-lg font-medium tracking-wide">
               Memuat konten...
