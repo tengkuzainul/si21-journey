@@ -1,15 +1,59 @@
 "use client";
 
-import Gallery from "@/features/gallery-section";
-import Hero from "@/features/hero-section";
-import Members from "@/features/member-section";
+import dynamic from "next/dynamic";
+import { Suspense, useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
+import Lenis from "lenis";
+
+const Hero = dynamic(() => import("@/features/hero-section"));
+const Members = dynamic(() => import("@/features/member-section"));
+const Gallery = dynamic(() => import("@/features/gallery-section"));
+const Footer = dynamic(() => import("@/features/footer-section"));
+
+function SectionInView({ children }: { children: React.ReactNode }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-20% 0px -20% 0px", once: false });
+  return (
+    <div ref={ref} style={{ minHeight: "60vh" }}>
+      {isInView ? children : null}
+    </div>
+  );
+}
 
 export default function Home() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.08,
+    });
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
   return (
-    <>
-      <Hero />
-      <Members />
-      <Gallery />
-    </>
+    <main className="bg-black min-h-screen w-full">
+      <Suspense
+        fallback={
+          <div className="text-center py-20 text-white">Loading...</div>
+        }
+      >
+        <SectionInView>
+          <Hero />
+        </SectionInView>
+        <SectionInView>
+          <Members />
+        </SectionInView>
+        <SectionInView>
+          <Gallery />
+        </SectionInView>
+        <SectionInView>
+          <Footer />
+        </SectionInView>
+      </Suspense>
+    </main>
   );
 }
