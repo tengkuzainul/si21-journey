@@ -26,7 +26,3 @@ jobs:
           npx tsc --noEmit
       - name: Build Next.js app
         run: npm run build
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-      - name: Deploy to Vercel Production
-        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}

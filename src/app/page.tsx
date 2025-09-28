@@ -35,15 +35,9 @@ export default function Home() {
     };
   }, []);
   return (
-    <main className="bg-black min-h-screen w-full">
-      <Suspense
-        fallback={
-          <div className="text-center py-20 text-white">Loading...</div>
-        }
-      >
-        <SectionInView>
-          <Hero />
-        </SectionInView>
+    <main className="min-h-screen w-full">
+      <Suspense>
+        <Hero />
         <SectionInView>
           <Members />
         </SectionInView>
