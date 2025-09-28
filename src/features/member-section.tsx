@@ -215,15 +215,16 @@ export default function Members() {
 
   return (
     <ParallaxProvider>
-      <section className="min-h-screen bg-black relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen bg-black relative overflow-hidden pb-2 pt-14 px-2 sm:px-4 lg:px-6">
         {/* Subtle Background Elements */}
         <Parallax
           translateY={[-30, 30]}
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none z-[9999999]"
         >
-          <div className="absolute top-1/4 left-1/6 w-1 h-1 bg-white/20 rounded-full" />
-          <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-white/15 rounded-full" />
-          <div className="absolute top-1/2 left-2/3 w-0.5 h-0.5 bg-white/10 rounded-full" />
+          <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-white rounded-full animate-pulse" />
+          <div className="absolute left-18 bottom-1/4 w-1 h-1 bg-white rounded-full animate-pulse" />
+          <div className="absolute right-18 top-1/4 w-3 h-3 bg-white rounded-full animate-pulse" />
+          <div className="absolute bottom-16 right-1/12 w-1 h-1 bg-white rounded-full animate-pulse" />
         </Parallax>
         {/* Header Section */}
         <motion.div

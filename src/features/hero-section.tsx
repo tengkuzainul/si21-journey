@@ -91,7 +91,8 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex flex-col justify-center items-center text-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center text-center overflow-hidden pt-32 pb-24 xl:pt-40 xl:pb-32"
+      style={{ minHeight: "100vh" }}
     >
       {/* Marquee */}
       <HeroMarquee />
@@ -104,14 +105,14 @@ export default function Hero() {
         transition={{ duration: 8, ease: "easeOut" }}
       />
 
-      {/* Enhanced Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/85 -z-0" />
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-transparent -z-0" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent -z-0" />
+      {/* Enhanced Gradient Overlays - transparansi lebih tinggi agar teks tetap terbaca */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90 -z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-transparent -z-0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent -z-0" />
 
       {/* Hero Content */}
       <motion.div
-        className="relative z-10 text-white px-4 sm:px-6 md:px-8 max-w-6xl mx-auto font-sans w-full"
+        className="relative z-10 text-white px-4 sm:px-8 md:px-12 xl:px-20 max-w-5xl xl:max-w-7xl mx-auto font-sans w-full"
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -132,7 +133,7 @@ export default function Hero() {
 
         {/* Professional Headline with Elegant Typography */}
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-[0.9] tracking-tight text-white"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-[1.1] tracking-tight text-white"
           variants={itemVariants}
         >
           <span className="block drop-shadow-2xl">Welcome to Our</span>
@@ -156,7 +157,7 @@ export default function Hero() {
 
         {/* Professional Statistics with Clean Design */}
         <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 md:gap-16"
+          className="flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-12 md:gap-16"
           variants={itemVariants}
         >
           {[
@@ -184,7 +185,7 @@ export default function Hero() {
 
       {/* Enhanced Scroll Indicator */}
       <motion.div
-        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-1 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.5, duration: 0.8 }}
