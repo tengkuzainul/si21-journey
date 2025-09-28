@@ -32,21 +32,7 @@ const titleVariants: Variants = {
   exit: { opacity: 0, y: -20 },
 };
 
-const subtitleVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1],
-      delay: 0.3,
-    },
-  },
-};
+// Removed unused subtitleVariants to fix ESLint warning
 
 const badgeVariants: Variants = {
   hidden: {
