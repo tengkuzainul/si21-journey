@@ -4,6 +4,7 @@ import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 
 import React, { useEffect, useState, useMemo, useCallback } from "react";
+import Image from "next/image";
 
 type Testimonial = {
   id?: number;
@@ -56,7 +57,6 @@ export const AnimatedTestimonials = ({
         {/* Image Section */}
         <div>
           <div className="relative h-80 w-full">
-            import Image from "next/image";
             <AnimatePresence>
               {memoTestimonials.map((testimonial, index) => (
                 <motion.div
