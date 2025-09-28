@@ -146,12 +146,12 @@ export default function Hero() {
           className="text-lg sm:text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-white/85 leading-relaxed font-light tracking-wide"
           variants={itemVariants}
         >
-          <span className="text-white/60 text-2xl font-serif">"</span>
+          <span className="text-white/60 text-2xl font-serif">&quot;</span>
           <span className="mx-2 font-medium">
             This is not the end of the journey but only the beginning of the
             journey
           </span>
-          <span className="text-white/60 text-2xl font-serif">"</span>
+          <span className="text-white/60 text-2xl font-serif">&quot;</span>
         </motion.blockquote>
 
         {/* Professional Statistics with Clean Design */}

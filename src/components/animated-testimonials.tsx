@@ -56,6 +56,7 @@ export const AnimatedTestimonials = ({
         {/* Image Section */}
         <div>
           <div className="relative h-80 w-full">
+            import Image from "next/image";
             <AnimatePresence>
               {memoTestimonials.map((testimonial, index) => (
                 <motion.div
@@ -90,13 +91,14 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <img
+                  <Image
                     src={testimonial.src}
                     alt={testimonial.name}
                     width={500}
                     height={1000}
                     draggable={false}
                     className="h-[32rem] w-full rounded-3xl object-cover object-[10%_30%]"
+                    priority
                   />
                 </motion.div>
               ))}
